@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 
-dmesg | grep usb
-gammu-smsd -c /opt/sms
+#render template
+eval "cat <<EOF
+$(<template.txt)
+EOF
+" 2> /dev/null
+
+gammu-smsd -c /root/
