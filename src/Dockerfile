@@ -17,6 +17,8 @@ RUN apt-get update && \
 #    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 #    apt-get clean
 
-COPY scripts/entry-point.sh /root/
-RUN chmod +x /root/entry-point.sh
+COPY scripts/entry-point.sh scripts/config.template.conf scripts/sendToBoxCar.sh\
+    /root/
+
+RUN chmod +x /root/*.sh
 ENTRYPOINT /root/entry-point.sh

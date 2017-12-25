@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
-#render template
+renderTemplate() {
 eval "cat <<EOF
-$(<template.txt)
+$(<$1)
 EOF
 " 2> /dev/null
+}
 
-gammu-smsd -c /root/
+renderTemplate /root/config.template.conf > /root/gammu.conf
+gammu-smsd -c /root/gammu.conf
