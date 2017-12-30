@@ -7,8 +7,8 @@ LABEL maintainer "Aleksandr Bochev <red.avtovo@gmail.com>"
 #=============
 WORKDIR /root
 
-RUN apt-get update && \
-    apt-get install -y gammu && \
+RUN apt-get update
+    apt-get install -y gammu-smsd && \
     npm update npm && \
     npm install -g boxcar-cli
 #    npm cache clean && \
@@ -20,5 +20,9 @@ RUN apt-get update && \
 COPY scripts/entry-point.sh scripts/config.template.conf scripts/sendToBoxCar.sh\
     /root/
 
-RUN chmod +x /root/*.sh
+RUN mkdir -p /var/spool/sms/inbox/ &&\
+    mkdir -p /var/spool/sms/outbox/ &&\
+    mkdir -p /var/spool/sms/sent/ &&\
+    mkdir -p /var/spool/sms/error/ &&\
+    chmod +x /root/*.sh
 ENTRYPOINT /root/entry-point.sh
