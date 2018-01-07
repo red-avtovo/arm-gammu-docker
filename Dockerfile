@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node
+FROM arm32v7/node
 
 LABEL maintainer "Aleksandr Bochev <red.avtovo@gmail.com>"
 
@@ -17,7 +17,7 @@ RUN apt-get update
 #    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
 #    apt-get clean
 
-COPY scripts/entry-point.sh scripts/config.template.conf scripts/sendToBoxCar.sh\
+COPY scripts scripts/config.template.conf scripts/sendToBoxCar.sh\
     /root/
 
 RUN mkdir -p /var/spool/sms/inbox/ &&\
