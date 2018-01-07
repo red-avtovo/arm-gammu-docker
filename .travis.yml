@@ -8,7 +8,7 @@ script:
 # build image
 - docker build -t redavtovo/arm-gammu-docker .
 # test image
-- docker run redavtovo/arm-gammu-docker arm-gammu-docker --version
+#- docker run redavtovo/arm-gammu-docker arm-gammu-docker --version
 # push image
 - >
   if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
