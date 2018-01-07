@@ -1,4 +1,4 @@
-FROM arm32v7/node
+FROM hypriot/rpi-node
 
 LABEL maintainer "Aleksandr Bochev <red.avtovo@gmail.com>"
 
