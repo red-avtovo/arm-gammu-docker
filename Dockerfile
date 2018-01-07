@@ -7,7 +7,7 @@ LABEL maintainer "Aleksandr Bochev <red.avtovo@gmail.com>"
 #=============
 WORKDIR /root
 
-RUN apt-get update
+RUN apt-get update &&\
     apt-get install -y gammu-smsd && \
     npm update npm && \
     npm install -g boxcar-cli
