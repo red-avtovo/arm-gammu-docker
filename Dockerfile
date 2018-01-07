@@ -7,9 +7,11 @@ LABEL maintainer "Aleksandr Bochev <red.avtovo@gmail.com>"
 #=============
 WORKDIR /root
 
+#https://github.com/npm/uid-number/issues/3
 RUN apt-get update &&\
     apt-get install -y gammu-smsd && \
     npm update npm && \
+    npm config set unsafe-perm true &&\
     npm install -g boxcar-cli
 #    npm cache clean && \
 #    apt-get remove --purge -y npm && \
