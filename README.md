@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/red-avtovo/arm-gammu-docker.svg?branch=master)](https://travis-ci.org/red-avtovo/arm-gammu-docker)
+
 # Project receives messages from GSM Modem and sends it as a Boxcar notification
 
 to run
